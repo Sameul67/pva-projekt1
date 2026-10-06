@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #79879d;
     color: #111111;
@@ -32,11 +36,14 @@ header {
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
 }
 
 #navbar ul li a {
+    display: block;
     padding: 10px;
-    margin: 0 4px;
 }
 
 #navbar ul li a:hover {
@@ -49,11 +56,16 @@ header {
 }
 
 .hlavni-blok {
-    width: 800px;
+    width: calc(100% - 32px);
+    max-width: 860px;
     margin: 20px auto;
-    padding: 30px;
+    padding: clamp(20px, 5vw, 30px);
     background-color: #ecfd53;
     border-radius: 10px;
+}
+
+h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
 }
 
 h1, h2, h4, p {
@@ -69,6 +81,7 @@ p {
 img {
     border-radius: 20px;
     max-width: 100%;
+    height: auto;
     transition: 0.3s;
     display: block;
     margin: 0 auto;
@@ -130,11 +143,6 @@ footer {
     }
 
     #navbar ul li a {
-        display: block;
-        margin: 0;
-    }
-
-    body {
-        padding: 10px;
+        text-align: center;
     }
 }
